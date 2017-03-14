@@ -2,7 +2,7 @@
 ;;;(load "task1.lsp")
 ;;;(setf map (init-empty-array 16))
 ;;;(print-array map)
-;;;(setf map (init-random-array map))
+;;;(setf map (init-array map))
 ;;;(print-array map)
 ;;;----------------------------------EXTRA THINGS TO TEST ARE THE SUB-FUNCTIONS--------------------------------------
 ;;;(rand-weight-vector)
@@ -33,7 +33,7 @@
 )
 
 ;;create a method to "FILL" the n by n array RANDOMLY
-(defun init-random-array (arrayN)
+(defun init-array (arrayN)
 	(dotimes (i (car (array-dimensions arrayN)))
 		(dotimes (j (cadr (array-dimensions arrayN)))
 			(setf (aref arrayN i j) (rand-weight-vector))

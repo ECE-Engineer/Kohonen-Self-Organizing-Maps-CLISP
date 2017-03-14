@@ -1,0 +1,138 @@
+;;;;-------------------------------------------EXAMPLE COMMANDS BELOW-------------------------------------------------------
+;;;(load "task3.lsp")
+;;;(setf map (init-screen 'RANDOM))
+;;;(setf sample (rand-weight-vector))
+;;;(find-winner map sample 'ED)
+;;;(find-winner map sample 'CS)
+;;;(find-winner map sample 'PCC)
+;;;(setf map (new-screen-layout 'CORNER))
+;;;(setf sample (rand-weight-vector))
+;;;(find-winner map sample 'ED)
+;;;(find-winner map sample 'CS)
+;;;(find-winner map sample 'PCC)
+;;;(setf map (new-screen-layout 'CENTER))
+;;;(setf sample (rand-weight-vector))
+;;;(find-winner map sample 'ED)
+;;;(find-winner map sample 'CS)
+;;;(find-winner map sample 'PCC)
+;;;----------------------------------EXTRA THINGS TO TEST ARE THE SUB-FUNCTIONS--------------------------------------
+;;;(setf vec1 (rand-weight-vector))
+;;;(setf vec2 (rand-weight-vector))
+;;;(get-dist vec2 vec1)
+;;;(pearson-correlation-coefficient vec2 vec1)
+;;;(cosine-similarity vec2 vec1)
+
+(load "task2.lsp")
+(load "lp.lsp")
+
+(defconstant *FEATURE-AMOUNT* 5)
+
+;;create a method to use the pearson correlation coefficient similarity metric
+(defun pearson-correlation-coefficient (vector1 vector2 &aux sum-of-products sum1 sum2 square-sum1 square-sum2)
+	*read-default-float-format*
+	(setf sum-of-products (+ (* (nth 0 vector1) (nth 0 vector2)) (* (nth 1 vector1) (nth 1 vector2)) (* (nth 2 vector1) (nth 2 vector2))))
+	(setf sum1 (+ (nth 0 vector1) (nth 1 vector1) (nth 2 vector1)))
+	(setf sum2 (+ (nth 0 vector2) (nth 1 vector2) (nth 2 vector2)))
+	(setf square-sum1 (+ (expt (nth 0 vector1) 2) (expt (nth 1 vector1) 2) (expt (nth 2 vector1) 2)))
+	(setf square-sum2 (+ (expt (nth 0 vector2) 2) (expt (nth 1 vector2) 2) (expt (nth 2 vector2) 2)))
+	(setf denominator (sqrt (* (- square-sum1 (/ (expt sum1 2) *FEATURE-AMOUNT*)) (- square-sum2 (/ (expt sum2 2) *FEATURE-AMOUNT*)))))
+	(cond
+		((not (= denominator 0)) (/ (- sum-of-products (/ (* sum1 sum2) *FEATURE-AMOUNT*)) denominator))
+		(t 0)
+	)
+)
+
+;;create a method to use the cosine similarity similarity metric
+(defun cosine-similarity (vector1 vector2 &aux sum-of-products square-sum1 square-sum2)
+	*read-default-float-format*
+	(setf sum-of-products (+ (* (nth 0 vector1) (nth 0 vector2)) (* (nth 1 vector1) (nth 1 vector2)) (* (nth 2 vector1) (nth 2 vector2))))
+	(setf square-sum1 (+ (expt (nth 0 vector1) 2) (expt (nth 1 vector1) 2) (expt (nth 2 vector1) 2)))
+	(setf square-sum2 (+ (expt (nth 0 vector2) 2) (expt (nth 1 vector2) 2) (expt (nth 2 vector2) 2)))
+	(setf denominator (* (sqrt square-sum1) (sqrt square-sum2)))
+	(cond
+		((not (= denominator 0)) (/ sum-of-products denominator))
+		(t 0)
+	)
+)
+
+;;create a method to find the weight vector that is the most simlilar to the sample weight vector
+(defun find-winner (arrayN sample-vector similarity-metric &aux large-list previous-value current-value counter)
+	(setf large-list '())
+	*read-default-float-format*
+	(setf previous-value 0)
+	(setf current-value 0)
+	(setf counter 0)
+	
+	(cond
+		((eq similarity-metric 'PCC)
+			(dotimes (i (car (array-dimensions arrayN)))
+				(dotimes (j (cadr (array-dimensions arrayN)))
+					(cond
+						((and (= i 0) (= j 0))
+							(setf previous-value (pearson-correlation-coefficient sample-vector (aref arrayN i j)))
+							(setf large-list(snoc (aref arrayN i j) large-list))
+							(setf counter (+ counter 1))
+						)
+						(t
+							(setf current-value (pearson-correlation-coefficient sample-vector (aref arrayN i j)))
+							(if (> current-value previous-value)
+								(progn
+									(setf large-list (remove (nth (- counter 1) large-list) large-list))
+									(setf large-list(snoc (aref arrayN i j) large-list))
+									(setf previous-value current-value)
+								)
+							)
+						)
+					)
+				)
+			)
+		)
+		((eq similarity-metric 'CS)
+			(dotimes (i (car (array-dimensions arrayN)))
+				(dotimes (j (cadr (array-dimensions arrayN)))
+					(cond
+						((and (= i 0) (= j 0))
+							(setf previous-value (cosine-similarity sample-vector (aref arrayN i j)))
+							(setf large-list(snoc (aref arrayN i j) large-list))
+							(setf counter (+ counter 1))
+						)
+						(t
+							(setf current-value (cosine-similarity sample-vector (aref arrayN i j)))
+							(if (> current-value previous-value)
+								(progn
+									(setf large-list (remove (nth (- counter 1) large-list) large-list))
+									(setf large-list(snoc (aref arrayN i j) large-list))
+									(setf previous-value current-value)
+								)
+							)
+						)
+					)
+				)
+			)
+		)
+		((eq similarity-metric 'ED)
+			(dotimes (i (car (array-dimensions arrayN)))
+				(dotimes (j (cadr (array-dimensions arrayN)))
+					(cond
+						((and (= i 0) (= j 0))
+							(setf previous-value (get-dist sample-vector (aref arrayN i j)))
+							(setf large-list(snoc (aref arrayN i j) large-list))
+							(setf counter (+ counter 1))
+						)
+						(t
+							(setf current-value (get-dist sample-vector (aref arrayN i j)))
+							(if (< current-value previous-value)
+								(progn
+									(setf large-list (remove (nth (- counter 1) large-list) large-list))
+									(setf large-list(snoc (aref arrayN i j) large-list))
+									(setf previous-value current-value)
+								)
+							)
+						)
+					)
+				)
+			)
+		)
+	)
+	(nth 0 large-list)
+)

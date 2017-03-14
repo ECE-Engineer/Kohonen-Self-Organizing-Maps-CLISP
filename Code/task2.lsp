@@ -1,25 +1,70 @@
 ;;;;-------------------------------------------EXAMPLE COMMANDS BELOW-------------------------------------------------------
 ;;;(load "task2.lsp")
-;;;(setf map (init-default-array 16))
+;;;(setf map (init-default-array 50))
 ;;;(print-array map)
-;;;(setf map (init-random-array map))
-;;;(print-array map)
-;;;(setf map (init-default-array 16))
-;;;(setf map (init-corners-array map))
-;;;(print-array map)
-;;;(setf map (init-default-array 16))
-;;;(setf map (init-equidistant-circles-array map))
-;;;(print-array map)
+;;;(init-screen 'RANDOM)
+;;;(init-screen 'CORNER)
+;;;(init-screen 'CENTER)
 ;;;----------------------------------EXTRA THINGS TO TEST ARE THE SUB-FUNCTIONS--------------------------------------
 ;;;(setf vec1 (rand-weight-vector))
 ;;;(setf vec2 (rand-weight-vector))
 ;;;(subtract vec2 vec1)
 ;;;(setf vec1 (set-vector (nth 0 (rand-weight-vector)) (nth 1 (rand-weight-vector)) (nth 2 (rand-weight-vector))))
 ;;;(get-dist vec2 vec1)
-
-
+;;;(setf vec2 (get-random-vector))
+;;;(get-dist vec2 vec1)
 
 (load "task1.lsp")
+
+(setf vector-weights (make-array (list 50 50) :initial-element '(0 0 0)))
+(setf color-buffer (make-array (list 50 50) :initial-element '(0 0 0)))
+(setf vector-samples (make-array (list 50) :initial-element '(0 0 0)))
+(defconstant *MAX-SAMPLE-POINTS* 50)
+
+(setf rgb-palette (make-array (list 256) :initial-element '(0 0 0)))
+(setf current-palette (make-array (list 256) :initial-element '(0 0 0)))
+(setf rbg-table (make-array (list 6 6 6) :initial-element '(0 0 0)))
+
+
+
+;;create a method to select a random sample from the map
+(defun get-random-vector ()
+	(aref vector-samples (multiple-value-bind (q r) (floor (random *MAX-SAMPLE-POINTS*)) q))
+)
+
+;;create a method to set the current color palette
+(defun set-rgb ()
+	*read-default-float-format*
+	(dotimes (i (car (array-dimensions current-palette)))
+		(setf (aref current-palette i) (aref rgb-palette i))
+	)
+)
+
+;;create a method to initialize all the vector samples
+(defun init-vector-samples ()
+	*read-default-float-format*
+	(dotimes (i *MAX-SAMPLE-POINTS*)
+		(setf (aref vector-samples i) (list (multiple-value-bind (q r) (floor (random 6)) q) (multiple-value-bind (q r) (floor (random 6)) q) (multiple-value-bind (q r) (floor (random 6)) q)))
+	)
+)
+
+;;create a method to return a weight vector with its contents rounded
+(defun round-vector (vector1)
+	(list (round (nth 0 vector1)) (round (nth 1 vector1)) (round (nth 2 vector1)))
+)
+
+;;create a method to update the screen
+(defun update-rgb (&aux temp-vec)
+	*read-default-float-format*
+	(setf temp-vec '(0 0 0))
+	
+	(dotimes (i (car (array-dimensions vector-weights)))
+		(dotimes (j (cadr (array-dimensions vector-weights)))
+			(setf temp-vec (round-vector (aref vector-weights j i)))
+			(setf (aref color-buffer j i) (aref current-palette (aref rbg-table (nth 0 temp-vec) (nth 1 temp-vec) (nth 2 temp-vec))));;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+		)
+	)
+)
 
 ;;create a method to make a default n by n array
 (defun init-default-array (num)
@@ -27,17 +72,16 @@
 )
 
 ;;create a method to make an array that has red, green, blue, and black radiate from the corners
-(defun init-corners-array (arrayN &aux height-multiplier width-multiplier)
+(defun init-corners-array (&aux height-multiplier width-multiplier)
 	*read-default-float-format*
 	
-	(dotimes (i (car (array-dimensions arrayN)))
-		(setf height-multiplier (* (/ i (car (array-dimensions arrayN))) 5.0))
-		(dotimes (j (cadr (array-dimensions arrayN)))
-			(setf width-multiplier (/ j (cadr (array-dimensions arrayN))))
-			(setf (aref arrayN i j) (list (* (- 1.0 width-multiplier) height-multiplier) (* width-multiplier height-multiplier) (* (abs width-multiplier) (- 5.0 height-multiplier))))
+	(dotimes (i (car (array-dimensions vector-weights)))
+		(setf height-multiplier (* (/ i (car (array-dimensions vector-weights))) 5.0))
+		(dotimes (j (cadr (array-dimensions vector-weights)))
+			(setf width-multiplier (/ j (cadr (array-dimensions vector-weights))))
+			(setf (aref vector-weights i j) (list (* (- 1.0 width-multiplier) height-multiplier) (* width-multiplier height-multiplier) (* (abs width-multiplier) (- 5.0 height-multiplier))))
 		)
 	)
-	arrayN
 )
 
 ;;create a method to calculate the difference between 2 vectors
@@ -50,6 +94,7 @@
 
 ;;create a method to set a vector
 (defun set-vector (red-value green-value blue-value)
+	*read-default-float-format*
 	(list red-value green-value blue-value)
 )
 
@@ -64,19 +109,19 @@
 )
 
 ;;create a method to make an array that has red, green, and blue form a circle around the center
-(defun init-equidistant-circles-array (arrayN &aux center outer max-dist theta1 theta2 theta3 height2 height4 width2 red-center green-center blue-center)
+(defun init-equidistant-circles-array (&aux center outer max-dist theta1 theta2 theta3 height2 height4 width2 red-center green-center blue-center)
 	*read-default-float-format*
 	
-	(setf center (list (car (array-dimensions arrayN)) (cadr (array-dimensions arrayN)) 0.0))
+	(setf center (list (car (array-dimensions vector-weights)) (cadr (array-dimensions vector-weights)) 0.0))
 	(setf outer (list 0.0 0.0 0.0))
 	
 	(setf max-dist (/ (get-dist center outer) 5.0))
 	(setf theta1 (* 90.0 (/ PI 180.0)))
 	(setf theta2 (* 210.0 (/ PI 180.0)))
 	(setf theta3 (* 330.0 (/ PI 180.0)))
-	(setf height2 (/ (car (array-dimensions arrayN)) 2))
-	(setf height4 (/ (car (array-dimensions arrayN)) 4))
-	(setf width2 (/ (cadr (array-dimensions arrayN)) 2))
+	(setf height2 (/ (car (array-dimensions vector-weights)) 2))
+	(setf height4 (/ (car (array-dimensions vector-weights)) 4))
+	(setf width2 (/ (cadr (array-dimensions vector-weights)) 2))
 	
 	(setf red-center (list (* (cos theta1) height4) (* (sin theta1) height4) 0.0))
 	(setf green-center (list (* (cos theta2) height4) (* (sin theta2) height4) 0.0))
@@ -86,12 +131,104 @@
 	(setf green-center (set-vector (+ (nth 0 green-center) width2) (+ (nth 1 green-center) height2) 0.0))
 	(setf blue-center (set-vector (+ (nth 0 blue-center) width2) (+ (nth 1 blue-center) height2) 0.0))
 	
-	(dotimes (i (car (array-dimensions arrayN)))
-		(dotimes (j (cadr (array-dimensions arrayN)))
+	(dotimes (i (car (array-dimensions vector-weights)))
+		(dotimes (j (cadr (array-dimensions vector-weights)))
 			(setf outer (set-vector j i 0.0))
 			
-			(setf (aref arrayN i j) (list (/ (get-dist outer red-center) max-dist) (/ (get-dist outer green-center) max-dist) (/ (get-dist outer blue-center) max-dist)))
+			(setf (aref vector-weights i j) (list (/ (get-dist outer red-center) max-dist) (/ (get-dist outer green-center) max-dist) (/ (get-dist outer blue-center) max-dist)))
 		)
 	)
-	arrayN
+)
+
+;;create a method to "FILL" the n by n array RANDOMLY
+(defun init-random-array ();;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+	*read-default-float-format*
+	(dotimes (i (car (array-dimensions vector-weights)))
+		(dotimes (j (cadr (array-dimensions vector-weights)))
+			(setf (aref vector-weights i j) (rand-weight-vector))
+		)
+	)
+)
+
+;;create a method to make all the values in the array to floating-point-numbers
+(defun to-float (arrayN &aux temp)
+	*read-default-float-format*
+	(dotimes (i (car (array-dimensions arrayN)))
+		(dotimes (j (cadr (array-dimensions arrayN)))
+			(setf temp (list (coerce (nth 0 (aref arrayN i j)) 'float) (coerce (nth 1 (aref arrayN i j)) 'float) (coerce (nth 2 (aref arrayN i j)) 'float)))
+			(setf (aref arrayN i j) temp)
+		)
+	)
+)
+
+;;create a method that sets the screen colors
+(defun init-screen (init-choice)
+	*read-default-float-format*
+	(setf col-loop 0)
+	(dotimes (i (nth 0 (array-dimensions rbg-table)))
+		(dotimes (j (nth 1 (array-dimensions rbg-table)))
+			(dotimes (k (nth 2 (array-dimensions rbg-table)))
+				(setf (aref rbg-table i j k) col-loop)
+				(setf (aref rgb-palette (+ (* i 36) (* j 6) k)) (list (* i (/ 256 5)) (* j (/ 256 5)) (* k (/ 256 5))))
+				(setf col-loop (+ col-loop 1))
+			)
+		)
+	)
+	(dotimes (i (car (array-dimensions vector-weights)))
+		(dotimes (j (cadr (array-dimensions vector-weights)))
+			(setf (aref vector-weights j i) '(0 0 0))
+			(setf (aref color-buffer j i) '(0 0 0))
+		)
+	)
+	(dotimes (i *MAX-SAMPLE-POINTS*)
+		(setf (aref vector-samples i) '(0 0 0))
+	)
+	(set-rgb)
+	(init-vector-samples)
+	(cond
+		((eq init-choice 'RANDOM)
+			(init-random-array)
+			(set-rgb)
+			vector-weights
+		)
+		(
+			(eq init-choice 'CORNER) (init-corners-array)
+			(set-rgb)
+			(update-rgb)
+			(to-float color-buffer)
+			color-buffer
+		)
+		(
+			(eq init-choice 'CENTER) (init-equidistant-circles-array)
+			(set-rgb)
+			(update-rgb)
+			(to-float color-buffer)
+			color-buffer
+		)
+	)
+)
+
+;;create a method that picks a new screen layout
+(defun new-screen-layout (init-choice)
+	(cond
+		((eq init-choice 'RANDOM)
+			(init-random-array)
+			(set-rgb)
+			vector-weights
+		)
+		(
+			(eq init-choice 'CORNER) (init-corners-array)
+			(set-rgb)
+			(update-rgb)
+			(to-float color-buffer)
+			color-buffer
+		)
+		(
+			(eq init-choice 'CENTER) (init-equidistant-circles-array)
+			(set-rgb)
+			(update-rgb)
+			(to-float color-buffer)
+			color-buffer
+		)
+	)
 )
