@@ -14,6 +14,9 @@
 ;;;(setf vec2 (get-random-vector))
 ;;;(get-dist vec2 vec1)
 
+(ql:quickload "vecto")
+(in-package #:vecto)
+
 (load "task1.lsp")
 
 (setf vector-weights (make-array (list 50 50) :initial-element '(0 0 0)))

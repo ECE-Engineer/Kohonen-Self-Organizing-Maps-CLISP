@@ -22,6 +22,9 @@
 ;;;(pearson-correlation-coefficient vec2 vec1)
 ;;;(cosine-similarity vec2 vec1)
 
+(ql:quickload "vecto")
+(in-package #:vecto)
+
 (load "task2.lsp")
 (load "lp.lsp")
 

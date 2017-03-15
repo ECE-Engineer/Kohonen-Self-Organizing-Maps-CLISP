@@ -7,7 +7,8 @@
 ;;;----------------------------------EXTRA THINGS TO TEST ARE THE SUB-FUNCTIONS--------------------------------------
 ;;;(rand-weight-vector)
 
-
+(ql:quickload "vecto")
+(in-package #:vecto)
 
 ;;create a method to make an empty n by n array
 (defun init-empty-array (num)
