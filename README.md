@@ -20,5 +20,5 @@ Task Number | Task Title | COMPLETED
 ![GitHub Logo](./Visuals/corner.png)
 ![GitHub Logo](./Visuals/center.png)
 
-##My Class Project Website
-[GitHub](http://cs.oswego.edu/~kzeller/Portfolio/coursework/csc466/AI.html)
+## My Class Project Website
+[Artificial Intelligence Class Project Website](http://cs.oswego.edu/~kzeller/Portfolio/coursework/csc466/AI.html)
