@@ -7,6 +7,9 @@
 ;;;(paint-canvas map "corner.png")
 ;;;(setf map (new-screen-layout 'CENTER))
 ;;;(paint-canvas map "center.png")
+;;;(setf vect (rand-weight-vector))
+;;;(setf map (fill-array map vect))
+;;;(paint-canvas map "color.png")
 ;;;----------------------------------EXTRA THINGS TO TEST ARE THE SUB-FUNCTIONS--------------------------------------
 
 (load "task3.lsp")

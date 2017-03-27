@@ -1,5 +1,6 @@
 ;;;;-------------------------------------------EXAMPLE COMMANDS BELOW-------------------------------------------------------
 ;;;(load "task2.lsp")
+;;;(in-package #:vecto)
 ;;;(setf map (init-default-array 50))
 ;;;(print-array map)
 ;;;(init-screen 'RANDOM)
@@ -64,7 +65,7 @@
 	(dotimes (i (car (array-dimensions vector-weights)))
 		(dotimes (j (cadr (array-dimensions vector-weights)))
 			(setf temp-vec (round-vector (aref vector-weights j i)))
-			(setf (aref color-buffer j i) (aref current-palette (aref rbg-table (nth 0 temp-vec) (nth 1 temp-vec) (nth 2 temp-vec))));;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+			(setf (aref color-buffer j i) (aref current-palette (aref rbg-table (nth 0 temp-vec) (nth 1 temp-vec) (nth 2 temp-vec))))
 		)
 	)
 )
@@ -144,11 +145,11 @@
 )
 
 ;;create a method to "FILL" the n by n array RANDOMLY
-(defun init-random-array ();;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(defun init-random-array ()
 	*read-default-float-format*
 	(dotimes (i (car (array-dimensions vector-weights)))
 		(dotimes (j (cadr (array-dimensions vector-weights)))
-			(setf (aref vector-weights i j) (rand-weight-vector))
+			(setf (aref vector-weights j i) (list (/ (random 500) 100) (/ (random 500) 100) (/ (random 500) 100)))
 		)
 	)
 )
@@ -192,17 +193,21 @@
 		((eq init-choice 'RANDOM)
 			(init-random-array)
 			(set-rgb)
-			vector-weights
+			(update-rgb)
+			(to-float color-buffer)
+			color-buffer
 		)
 		(
-			(eq init-choice 'CORNER) (init-corners-array)
+			(eq init-choice 'CORNER)
+			(init-corners-array)
 			(set-rgb)
 			(update-rgb)
 			(to-float color-buffer)
 			color-buffer
 		)
 		(
-			(eq init-choice 'CENTER) (init-equidistant-circles-array)
+			(eq init-choice 'CENTER)
+			(init-equidistant-circles-array)
 			(set-rgb)
 			(update-rgb)
 			(to-float color-buffer)

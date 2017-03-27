@@ -1,5 +1,6 @@
 ;;;;-------------------------------------------EXAMPLE COMMANDS BELOW-------------------------------------------------------
 ;;;(load "task1.lsp")
+;;;(in-package #:vecto)
 ;;;(setf map (init-empty-array 16))
 ;;;(print-array map)
 ;;;(setf map (init-array map))
@@ -38,6 +39,16 @@
 	(dotimes (i (car (array-dimensions arrayN)))
 		(dotimes (j (cadr (array-dimensions arrayN)))
 			(setf (aref arrayN i j) (rand-weight-vector))
+		)
+	)
+	arrayN
+)
+
+;;create a method to "FILL" the n by n array with one color
+(defun fill-array (arrayN vect)
+	(dotimes (i (car (array-dimensions arrayN)))
+		(dotimes (j (cadr (array-dimensions arrayN)))
+			(setf (aref arrayN i j) vect)
 		)
 	)
 	arrayN

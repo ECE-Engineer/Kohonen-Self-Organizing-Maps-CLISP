@@ -1,5 +1,6 @@
 ;;;;-------------------------------------------EXAMPLE COMMANDS BELOW-------------------------------------------------------
 ;;;(load "task3.lsp")
+;;;(in-package #:vecto)
 ;;;(setf map (init-screen 'RANDOM))
 ;;;(setf sample (rand-weight-vector))
 ;;;(find-winner map sample 'ED)
@@ -81,7 +82,7 @@
 							(if (> current-value previous-value)
 								(progn
 									(setf large-list (remove (nth (- counter 1) large-list) large-list))
-									(setf large-list(snoc (aref arrayN i j) large-list))
+									(setf large-list (snoc (aref arrayN i j) large-list))
 									(setf previous-value current-value)
 								)
 							)
@@ -104,7 +105,7 @@
 							(if (> current-value previous-value)
 								(progn
 									(setf large-list (remove (nth (- counter 1) large-list) large-list))
-									(setf large-list(snoc (aref arrayN i j) large-list))
+									(setf large-list (snoc (aref arrayN i j) large-list))
 									(setf previous-value current-value)
 								)
 							)
@@ -127,7 +128,7 @@
 							(if (< current-value previous-value)
 								(progn
 									(setf large-list (remove (nth (- counter 1) large-list) large-list))
-									(setf large-list(snoc (aref arrayN i j) large-list))
+									(setf large-list (snoc (aref arrayN i j) large-list))
 									(setf previous-value current-value)
 								)
 							)
