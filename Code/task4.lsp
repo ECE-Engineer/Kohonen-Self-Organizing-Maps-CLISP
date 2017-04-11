@@ -37,7 +37,7 @@
 (load "task3.lsp")
 
 *read-default-float-format*
-(setf radius 60)
+(defconstant *RADIUS* 60)
 
 ;;create a method to get scaled down corresponding winning weight vector
 (defun get-down-scaled-vect (vector-array vect &aux pos vec)
@@ -58,7 +58,7 @@
 ;;create a method to determine the neighbors of the winning weight vector_image
 (defun get-neighbors (vector-array winning-weight-vector time &aux radius2 outer-vect center-vect normalized-dist neighbor-vect temp)
 	*read-default-float-format*
-	(setf radius2 (round (/ (* radius (- 1 time)) 2)))
+	(setf radius2 (round (/ (* *RADIUS* (- 1 time)) 2)))
 	(setf neighbor-vect '())
 	
 	(loop for i from (- radius2) to radius2 do

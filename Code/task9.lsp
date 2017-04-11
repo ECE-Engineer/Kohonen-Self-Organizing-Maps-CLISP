@@ -2,17 +2,17 @@
 ;;;(load "task9.lsp")
 ;;;(in-package #:vecto)
 ;;;(setf map (init-screen 'RANDOM))
-;;;(paint-canvas map "random.png")
+;;;(paint-canvas map "../Visuals/random.png")
 ;;;(setf map (new-screen-layout 'CORNER))
-;;;(paint-canvas map "corner.png")
+;;;(paint-canvas map "../Visuals/corner.png")
 ;;;(setf map (new-screen-layout 'CENTER))
-;;;(paint-canvas map "center.png")
+;;;(paint-canvas map "../Visuals/center.png")
 ;;;(setf vect (rand-weight-vector))
 ;;;(setf map (fill-array map vect))
-;;;(paint-canvas map "color.png")
+;;;(paint-canvas map "../Visuals/color.png")
 ;;;----------------------------------EXTRA THINGS TO TEST ARE THE SUB-FUNCTIONS--------------------------------------
 
-(load "task3.lsp")
+;(load "task3.lsp")
 (ql:quickload "vecto")
 (in-package #:vecto)
 
@@ -33,10 +33,10 @@
 	(defconstant *X-SIZE* 15)
 	*read-default-float-format*
 	(with-canvas (:width 200 :height 200)
-		(dotimes (i (car (array-dimensions arrayN)))
-			(dotimes (j (cadr (array-dimensions arrayN)))
+		(dotimes (i (car (array-dimensions vector-weights)))
+			(dotimes (j (cadr (array-dimensions vector-weights)))
 				(set-rgb-fill (/ (nth 0 (aref arrayN i j)) 256) (/ (nth 1 (aref arrayN i j)) 256) (/ (nth 2 (aref arrayN i j)) 256))
-				(rectangle (+ (shift-left j 2) *X-SIZE*) (shift-left i 2) 4 4)
+				(rectangle (+ (shift-left j 2) *X-SIZE*) (shift-left i 2) 4 4);
 				(fill-path)
 			)
 		)

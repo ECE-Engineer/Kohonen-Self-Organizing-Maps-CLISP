@@ -69,8 +69,8 @@
 	
 	(cond
 		((eq similarity-metric 'PCC)
-			(dotimes (i (car (array-dimensions arrayN)))
-				(dotimes (j (cadr (array-dimensions arrayN)))
+			(dotimes (i (car (array-dimensions vector-weights)))
+				(dotimes (j (cadr (array-dimensions vector-weights)))
 					(cond
 						((and (= i 0) (= j 0))
 							(setf previous-value (pearson-correlation-coefficient sample-vector (aref arrayN i j)))
@@ -92,8 +92,8 @@
 			)
 		)
 		((eq similarity-metric 'CS)
-			(dotimes (i (car (array-dimensions arrayN)))
-				(dotimes (j (cadr (array-dimensions arrayN)))
+			(dotimes (i (car (array-dimensions vector-weights)))
+				(dotimes (j (cadr (array-dimensions vector-weights)))
 					(cond
 						((and (= i 0) (= j 0))
 							(setf previous-value (cosine-similarity sample-vector (aref arrayN i j)))
@@ -115,8 +115,8 @@
 			)
 		)
 		((eq similarity-metric 'ED)
-			(dotimes (i (car (array-dimensions arrayN)))
-				(dotimes (j (cadr (array-dimensions arrayN)))
+			(dotimes (i (car (array-dimensions vector-weights)))
+				(dotimes (j (cadr (array-dimensions vector-weights)))
 					(cond
 						((and (= i 0) (= j 0))
 							(setf previous-value (get-dist sample-vector (aref arrayN i j)))

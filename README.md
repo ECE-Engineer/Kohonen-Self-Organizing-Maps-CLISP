@@ -7,18 +7,29 @@ Task Number | Task Title | COMPLETED
 1 | Symbolically Visualizing The Map | X
 2 | Initializing The Weight Vector Map | X
 3 | Finding The Winning Weight Vector | X
-4 | Finding Neighboring Weight Vectors | 
-5 | Creating The Learning Function | 
-6 | Scaling The Neighboring Weight Vectors | 
-7 | Visualizing The Grade Of The SOMs | 
-8 | Color Recognition Through Classification | 
+4 | Finding Neighboring Weight Vectors | X
+5 | Creating The Learning Function | X
+6 | Scaling The Neighboring Weight Vectors | X
+7 | Visualizing The Grade Of The SOMs | X
+8 | Color Recognition Through Classification | X
 9 | Similarity Visualization | X
-10 | SOMs Color Visualization | 
+10 | SOMs Color Visualization | X
 
 ## Samples From Project
 ![GitHub Logo](./Visuals/random.png)
 ![GitHub Logo](./Visuals/corner.png)
 ![GitHub Logo](./Visuals/center.png)
+
+##GIFs Of Each Initialization And Simularity Metric
+![Euclidean Distance & Random Initialization](./Visuals/GIFs/ED_init_random)
+![Euclidean Distance & Corner Initialization](./Visuals/GIFs/ED_init_corner)
+![Euclidean Distance & Center Initialization](./Visuals/GIFs/ED_init_center)
+![Cosine Simularity & Random Initialization](./Visuals/GIFs/CS_init_random)
+![Cosine Simularity & Corner Initialization](./Visuals/GIFs/CS_init_corner)
+![Cosine Simularity & Center Initialization](./Visuals/GIFs/CS_init_center)
+![Pearson Correlation Coefficient & Random Initialization](./Visuals/GIFs/PCC_init_random)
+![Pearson Correlation Coefficient & Corner Initialization](./Visuals/GIFs/PCC_init_corner)
+![Pearson Correlation Coefficient & Center Initialization](./Visuals/GIFs/PCC_init_center)
 
 ## My Class Project Website
 [Artificial Intelligence Class Project Website](http://cs.oswego.edu/~kzeller/Portfolio/coursework/csc466/AI.html)
