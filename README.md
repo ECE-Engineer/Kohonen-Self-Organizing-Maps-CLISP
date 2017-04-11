@@ -23,9 +23,11 @@ Task Number | Task Title | COMPLETED
 ![Euclidean Distance & Random Initialization](./Visuals/GIFs/ED_init_random.gif)
 ![Euclidean Distance & Corner Initialization](./Visuals/GIFs/ED_init_corner.gif)
 ![Euclidean Distance & Center Initialization](./Visuals/GIFs/ED_init_center.gif)
+
 ![Cosine Simularity & Random Initialization](./Visuals/GIFs/CS_init_random.gif)
 ![Cosine Simularity & Corner Initialization](./Visuals/GIFs/CS_init_corner.gif)
 ![Cosine Simularity & Center Initialization](./Visuals/GIFs/CS_init_center.gif)
+
 ![Pearson Correlation Coefficient & Random Initialization](./Visuals/GIFs/PCC_init_random.gif)
 ![Pearson Correlation Coefficient & Corner Initialization](./Visuals/GIFs/PCC_init_corner.gif)
 ![Pearson Correlation Coefficient & Center Initialization](./Visuals/GIFs/PCC_init_center.gif)
@@ -33,9 +35,11 @@ Task Number | Task Title | COMPLETED
 ![GitHub Logo](./Visuals/Finished_SOM/FINISHEDandEDandRANDOM.png)
 ![GitHub Logo](./Visuals/Finished_SOM/FINISHEDandEDandCORNER.png)
 ![GitHub Logo](./Visuals/Finished_SOM/---.png)
+
 ![GitHub Logo](./Visuals/Finished_SOM/FINISHEDandCSandRANDOM.png)
 ![GitHub Logo](./Visuals/Finished_SOM/FINISHEDandCSandCORNER.png)
 ![GitHub Logo](./Visuals/Finished_SOM/---.png)
+
 ![GitHub Logo](./Visuals/Finished_SOM/---.png)
 ![GitHub Logo](./Visuals/Finished_SOM/---.png)
 ![GitHub Logo](./Visuals/Finished_SOM/---.png)
@@ -43,9 +47,11 @@ Task Number | Task Title | COMPLETED
 ![GitHub Logo](./Visuals/Finished_SOM/---.png)
 ![GitHub Logo](./Visuals/Finished_SOM/---.png)
 ![GitHub Logo](./Visuals/Finished_SOM/---.png)
+
 ![GitHub Logo](./Visuals/Finished_SOM/---.png)
 ![GitHub Logo](./Visuals/Finished_SOM/---.png)
 ![GitHub Logo](./Visuals/Finished_SOM/---.png)
+
 ![GitHub Logo](./Visuals/Finished_SOM/---.png)
 ![GitHub Logo](./Visuals/Finished_SOM/---.png)
 ![GitHub Logo](./Visuals/Finished_SOM/---.png)
