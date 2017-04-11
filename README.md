@@ -21,6 +21,7 @@ Task Number | Task Title | COMPLETED
 ![GitHub Logo](./Visuals/center.png)
 
 ##GIFs Of Each Initialization And Simularity Metric
+
 ![Euclidean Distance & Random Initialization](./Visuals/GIFs/ED_init_random.gif)
 ![Euclidean Distance & Corner Initialization](./Visuals/GIFs/ED_init_corner.gif)
 ![Euclidean Distance & Center Initialization](./Visuals/GIFs/ED_init_center.gif)
