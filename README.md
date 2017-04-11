@@ -20,8 +20,6 @@ Task Number | Task Title | COMPLETED
 ![GitHub Logo](./Visuals/corner.png)
 ![GitHub Logo](./Visuals/center.png)
 
-##GIFs Of Each Initialization And Simularity Metric
-
 ![Euclidean Distance & Random Initialization](./Visuals/GIFs/ED_init_random.gif)
 ![Euclidean Distance & Corner Initialization](./Visuals/GIFs/ED_init_corner.gif)
 ![Euclidean Distance & Center Initialization](./Visuals/GIFs/ED_init_center.gif)
@@ -31,6 +29,26 @@ Task Number | Task Title | COMPLETED
 ![Pearson Correlation Coefficient & Random Initialization](./Visuals/GIFs/PCC_init_random.gif)
 ![Pearson Correlation Coefficient & Corner Initialization](./Visuals/GIFs/PCC_init_corner.gif)
 ![Pearson Correlation Coefficient & Center Initialization](./Visuals/GIFs/PCC_init_center.gif)
+
+![GitHub Logo](./Visuals/Finished_SOM/FINISHEDandEDandRANDOM.png)
+![GitHub Logo](./Visuals/Finished_SOM/FINISHEDandEDandCORNER.png)
+![GitHub Logo](./Visuals/Finished_SOM/---.png)
+![GitHub Logo](./Visuals/Finished_SOM/FINISHEDandCSandRANDOM.png)
+![GitHub Logo](./Visuals/Finished_SOM/---.png)
+![GitHub Logo](./Visuals/Finished_SOM/---.png)
+![GitHub Logo](./Visuals/Finished_SOM/---.png)
+![GitHub Logo](./Visuals/Finished_SOM/---.png)
+![GitHub Logo](./Visuals/Finished_SOM/---.png)
+
+![GitHub Logo](./Visuals/Finished_SOM/---.png)
+![GitHub Logo](./Visuals/Finished_SOM/---.png)
+![GitHub Logo](./Visuals/Finished_SOM/---.png)
+![GitHub Logo](./Visuals/Finished_SOM/---.png)
+![GitHub Logo](./Visuals/Finished_SOM/---.png)
+![GitHub Logo](./Visuals/Finished_SOM/---.png)
+![GitHub Logo](./Visuals/Finished_SOM/---.png)
+![GitHub Logo](./Visuals/Finished_SOM/---.png)
+![GitHub Logo](./Visuals/Finished_SOM/---.png)
 
 ## My Class Project Website
 [Artificial Intelligence Class Project Website](http://cs.oswego.edu/~kzeller/Portfolio/coursework/csc466/AI.html)
