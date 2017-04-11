@@ -21,15 +21,15 @@ Task Number | Task Title | COMPLETED
 ![GitHub Logo](./Visuals/center.png)
 
 ##GIFs Of Each Initialization And Simularity Metric
-![Euclidean Distance & Random Initialization](./Visuals/GIFs/ED_init_random)
-![Euclidean Distance & Corner Initialization](./Visuals/GIFs/ED_init_corner)
-![Euclidean Distance & Center Initialization](./Visuals/GIFs/ED_init_center)
-![Cosine Simularity & Random Initialization](./Visuals/GIFs/CS_init_random)
-![Cosine Simularity & Corner Initialization](./Visuals/GIFs/CS_init_corner)
-![Cosine Simularity & Center Initialization](./Visuals/GIFs/CS_init_center)
-![Pearson Correlation Coefficient & Random Initialization](./Visuals/GIFs/PCC_init_random)
-![Pearson Correlation Coefficient & Corner Initialization](./Visuals/GIFs/PCC_init_corner)
-![Pearson Correlation Coefficient & Center Initialization](./Visuals/GIFs/PCC_init_center)
+![Euclidean Distance & Random Initialization](./Visuals/GIFs/ED_init_random.gif)
+![Euclidean Distance & Corner Initialization](./Visuals/GIFs/ED_init_corner.gif)
+![Euclidean Distance & Center Initialization](./Visuals/GIFs/ED_init_center.gif)
+![Cosine Simularity & Random Initialization](./Visuals/GIFs/CS_init_random.gif)
+![Cosine Simularity & Corner Initialization](./Visuals/GIFs/CS_init_corner.gif)
+![Cosine Simularity & Center Initialization](./Visuals/GIFs/CS_init_center.gif)
+![Pearson Correlation Coefficient & Random Initialization](./Visuals/GIFs/PCC_init_random.gif)
+![Pearson Correlation Coefficient & Corner Initialization](./Visuals/GIFs/PCC_init_corner.gif)
+![Pearson Correlation Coefficient & Center Initialization](./Visuals/GIFs/PCC_init_center.gif)
 
 ## My Class Project Website
 [Artificial Intelligence Class Project Website](http://cs.oswego.edu/~kzeller/Portfolio/coursework/csc466/AI.html)
