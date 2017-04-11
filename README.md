@@ -38,7 +38,7 @@ Task Number | Task Title | COMPLETED
 
 ![GitHub Logo](./Visuals/Finished_SOM/FINISHEDandCSandRANDOM.png)
 ![GitHub Logo](./Visuals/Finished_SOM/FINISHEDandCSandCORNER.png)
-![GitHub Logo](./Visuals/Finished_SOM/---.png)
+![GitHub Logo](./Visuals/Finished_SOM/FINISHEDandCSandCENTER.png)
 
 ![GitHub Logo](./Visuals/Finished_SOM/FINISHEDandPCCandRANDOM.png)
 ![GitHub Logo](./Visuals/Finished_SOM/FINISHEDandPCCandCORNER.png)
