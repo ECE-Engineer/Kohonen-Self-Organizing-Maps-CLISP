@@ -12,7 +12,7 @@
 ;;;(paint-canvas map "../Visuals/color.png")
 ;;;----------------------------------EXTRA THINGS TO TEST ARE THE SUB-FUNCTIONS--------------------------------------
 
-;(load "task3.lsp")
+(load "task8.lsp")
 (ql:quickload "vecto")
 (in-package #:vecto)
 

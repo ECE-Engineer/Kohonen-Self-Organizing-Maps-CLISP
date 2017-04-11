@@ -1,0 +1,73 @@
+  i i i i i i i       ooooo    o        ooooooo   ooooo   ooooo
+  I I I I I I I      8     8   8           8     8     o  8    8
+  I  \ `+' /  I      8         8           8     8        8    8
+   \  `-+-'  /       8         8           8      ooooo   8oooo
+    `-__|__-'        8         8           8           8  8
+        |            8     o   8           8     o     8  8
+  ------+------       ooooo    8oooooo  ooo8ooo   ooooo   8
+
+Welcome to GNU CLISP 2.49 (2010-07-07) <http://clisp.cons.org/>
+
+Copyright (c) Bruno Haible, Michael Stoll 1992, 1993
+Copyright (c) Bruno Haible, Marcus Daniels 1994-1997
+Copyright (c) Bruno Haible, Pierpaolo Bernardi, Sam Steingold 1998
+Copyright (c) Bruno Haible, Sam Steingold 1999-2000
+Copyright (c) Sam Steingold, Bruno Haible 2001-2010
+
+Type :h and hit Enter for context help.
+
+;; Loading file C:\Users\Kyle\.clisprc.lisp ...
+;;  Loading file C:\Users\Kyle\quicklisp\setup.lisp ...
+;;   Loading file C:\Users\Kyle\quicklisp\ASDF.lisp ...
+;;   Loaded file C:\Users\Kyle\quicklisp\ASDF.lisp
+;;  Loaded file C:\Users\Kyle\quicklisp\setup.lisp
+;; Loaded file C:\Users\Kyle\.clisprc.lisp
+[1]> (load "task5.lsp")
+;; Loading file task5.lsp ...
+To load "vecto":
+  Load 1 ASDF system:
+    vecto
+; Loading "vecto"
+
+;;  Loading file task4.lsp ...
+To load "vecto":
+  Load 1 ASDF system:
+    vecto
+; Loading "vecto"
+
+;;   Loading file task3.lsp ...
+To load "vecto":
+  Load 1 ASDF system:
+    vecto
+; Loading "vecto"
+
+;;    Loading file task2.lsp ...
+To load "vecto":
+  Load 1 ASDF system:
+    vecto
+; Loading "vecto"
+
+;;     Loading file task1.lsp ...
+To load "vecto":
+  Load 1 ASDF system:
+    vecto
+; Loading "vecto"
+
+;;     Loaded file task1.lsp
+;;    Loaded file task2.lsp
+;;    Loading file lp.lsp ...
+;;    Loaded file lp.lsp
+;;   Loaded file task3.lsp
+;;  Loaded file task4.lsp
+;; Loaded file task5.lsp
+T
+[2]> (in-package #:vecto)
+#<PACKAGE VECTO>
+VECTO[3]> (learning-function 0.5 0.5)
+0.06295854
+VECTO[4]> (learning-function 1.5 0.5)
+1.0196754E-7
+VECTO[5]> (learning-function 2.5 0.5)
+2.6747084E-19
+VECTO[6]>
+Bye.

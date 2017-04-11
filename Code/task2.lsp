@@ -39,7 +39,7 @@
 ;;create a method to set the current color palette
 (defun set-rgb ()
 	*read-default-float-format*
-	(dotimes (i 256);;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;problem might be here------its a 1D array(car (array-dimensions current-palette))
+	(dotimes (i 256)
 		(setf (aref current-palette i) (aref rgb-palette i))
 	)
 )
@@ -64,8 +64,8 @@
 	
 	(dotimes (i (car (array-dimensions vector-weights)))
 		(dotimes (j (cadr (array-dimensions vector-weights)))
-			(setf temp-vec (round-vector (aref vector-weights j i)));;;;;;;;;;;;;;;;;;either something is wrong here or THE VECTOR WEIGHTS ARE NOT WHAT THEY SHOULD BE!!!
-			(setf (aref color-buffer j i) (aref current-palette (aref rbg-table (nth 0 temp-vec) (nth 1 temp-vec) (nth 2 temp-vec))));;;;;;;;;;;;;;;;;;;;;;;;here!;;;;;;;;;;;;;;;;;;;;;;;yes it is but where???!!!
+			(setf temp-vec (round-vector (aref vector-weights j i)))
+			(setf (aref color-buffer j i) (aref current-palette (aref rbg-table (nth 0 temp-vec) (nth 1 temp-vec) (nth 2 temp-vec))))
 		)
 	)
 )
@@ -166,12 +166,12 @@
 )
 
 ;;create a method that sets the screen colors
-(defun init-screen (init-choice);;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(defun init-screen (init-choice)
 	*read-default-float-format*
 	(setf col-loop 0)
 	(dotimes (i (nth 0 (array-dimensions rbg-table)))
 		(dotimes (j (nth 1 (array-dimensions rbg-table)))
-			(dotimes (k (nth 2 (array-dimensions rbg-table)));;;;;;;;;;;;;;;;;;;;;;;;;;;;;issue might be with these!!!!!
+			(dotimes (k (nth 2 (array-dimensions rbg-table)))
 				(setf (aref rbg-table i j k) col-loop)
 				(setf (aref rgb-palette (+ (* i 36) (* j 6) k)) (list (* i (/ 256 5)) (* j (/ 256 5)) (* k (/ 256 5))))
 				(setf col-loop (+ col-loop 1))
