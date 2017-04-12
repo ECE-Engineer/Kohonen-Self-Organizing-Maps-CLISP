@@ -44,17 +44,17 @@ Task Number | Task Title | COMPLETED
 ![GitHub Logo](./Visuals/Finished_SOM/FINISHEDandPCCandCORNER.png)
 ![GitHub Logo](./Visuals/Finished_SOM/FINISHEDandPCCandCENTER.png)
 
-![GitHub Logo](./Visuals/Finished_SOM/---.png)
-![GitHub Logo](./Visuals/Finished_SOM/---.png)
-![GitHub Logo](./Visuals/Finished_SOM/---.png)
+![GitHub Logo](./Visuals/Averaged_SOM/FINISHEDandEDandRANDOM.png)
+![GitHub Logo](./Visuals/Averaged_SOM/FINISHEDandEDandCORNER.png)
+![GitHub Logo](./Visuals/Averaged_SOM/FINISHEDandEDandCENTER.png)
 
-![GitHub Logo](./Visuals/Finished_SOM/---.png)
-![GitHub Logo](./Visuals/Finished_SOM/---.png)
-![GitHub Logo](./Visuals/Finished_SOM/---.png)
+![GitHub Logo](./Visuals/Averaged_SOM/FINISHEDandCSandRANDOM.png)
+![GitHub Logo](./Visuals/Averaged_SOM/FINISHEDandCSandCORNER.png)
+![GitHub Logo](./Visuals/Averaged_SOM/FINISHEDandCSandCENTER.png)
 
-![GitHub Logo](./Visuals/Finished_SOM/---.png)
-![GitHub Logo](./Visuals/Finished_SOM/---.png)
-![GitHub Logo](./Visuals/Finished_SOM/---.png)
+![GitHub Logo](./Visuals/Averaged_SOM/FINISHEDandPCCandRANDOM.png)
+![GitHub Logo](./Visuals/Averaged_SOM/FINISHEDandPCCandCORNER.png)
+![GitHub Logo](./Visuals/Averaged_SOM/FINISHEDandPCCandCENTER.png)
 
 ## My Class Project Website
 [Artificial Intelligence Class Project Website](http://cs.oswego.edu/~kzeller/Portfolio/coursework/csc466/AI.html)
