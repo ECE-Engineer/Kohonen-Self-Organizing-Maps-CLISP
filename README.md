@@ -14,23 +14,25 @@ Task Number | Task Title | COMPLETED
 8 | Color Recognition Through Classification | X
 9 | Similarity Visualization | X
 10 | SOMs Color Visualization | X
+11 | Paint A Canvas From Colors In Two Different Clusters | X
+12 | Write All Clusters To A File | X
 
 ## Samples From Project
 ![GitHub Logo](./Visuals/random.png)
 ![GitHub Logo](./Visuals/corner.png)
 ![GitHub Logo](./Visuals/center.png)
 
-![Euclidean Distance & Random Initialization](./Visuals/GIFs/ED_init_random.gif)
-![Euclidean Distance & Corner Initialization](./Visuals/GIFs/ED_init_corner.gif)
-![Euclidean Distance & Center Initialization](./Visuals/GIFs/ED_init_center.gif)
+![Euclidean Distance & Random Initialization](./Visuals/GIFs/edRANDOM.gif)
+![Euclidean Distance & Corner Initialization](./Visuals/GIFs/edCORNER.gif)
+![Euclidean Distance & Center Initialization](./Visuals/GIFs/edCENTER.gif)
 
-![Cosine Simularity & Random Initialization](./Visuals/GIFs/CS_init_random.gif)
-![Cosine Simularity & Corner Initialization](./Visuals/GIFs/CS_init_corner.gif)
-![Cosine Simularity & Center Initialization](./Visuals/GIFs/CS_init_center.gif)
+![Cosine Simularity & Random Initialization](./Visuals/GIFs/csRANDOM.gif)
+![Cosine Simularity & Corner Initialization](./Visuals/GIFs/csCORNER.gif)
+![Cosine Simularity & Center Initialization](./Visuals/GIFs/csCENTER.gif)
 
-![Pearson Correlation Coefficient & Random Initialization](./Visuals/GIFs/PCC_init_random.gif)
-![Pearson Correlation Coefficient & Corner Initialization](./Visuals/GIFs/PCC_init_corner.gif)
-![Pearson Correlation Coefficient & Center Initialization](./Visuals/GIFs/PCC_init_center.gif)
+![Pearson Correlation Coefficient & Random Initialization](./Visuals/GIFs/pccRANDOM.gif)
+![Pearson Correlation Coefficient & Corner Initialization](./Visuals/GIFs/pccCORNER.gif)
+![Pearson Correlation Coefficient & Center Initialization](./Visuals/GIFs/pccCENTER.gif)
 
 ![GitHub Logo](./Visuals/Finished_SOM/FINISHEDandEDandRANDOM.png)
 ![GitHub Logo](./Visuals/Finished_SOM/FINISHEDandEDandCORNER.png)
@@ -52,9 +54,17 @@ Task Number | Task Title | COMPLETED
 ![GitHub Logo](./Visuals/Averaged_SOM/FINISHEDandCSandCORNER.png)
 ![GitHub Logo](./Visuals/Averaged_SOM/FINISHEDandCSandCENTER.png)
 
-![GitHub Logo](./Visuals/Averaged_SOM/FINISHEDandPCCandRANDOM.png)
-![GitHub Logo](./Visuals/Averaged_SOM/FINISHEDandPCCandCORNER.png)
-![GitHub Logo](./Visuals/Averaged_SOM/FINISHEDandPCCandCENTER.png)
+![GitHub Logo](./Visuals/Extra/CHECKERBOARD-CANVAS (1).png)
+![GitHub Logo](./Visuals/Extra/CHECKERBOARD-CANVAS (2).png)
+![GitHub Logo](./Visuals/Extra/CHECKERBOARD-CANVAS (3).png)
+
+![GitHub Logo](./Visuals/Extra/CHECKERBOARD-CANVAS (4).png)
+![GitHub Logo](./Visuals/Extra/CHECKERBOARD-CANVAS (5).png)
+![GitHub Logo](./Visuals/Extra/CHECKERBOARD-CANVAS (6).png)
+
+![GitHub Logo](./Visuals/Extra/CHECKERBOARD-CANVAS (7).png)
+![GitHub Logo](./Visuals/Extra/CHECKERBOARD-CANVAS (8).png)
+![GitHub Logo](./Visuals/Extra/CHECKERBOARD-CANVAS (9).png)
 
 ## My Class Project Website
 [Artificial Intelligence Class Project Website](http://cs.oswego.edu/~kzeller/Portfolio/coursework/csc466/AI.html)
