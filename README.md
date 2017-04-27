@@ -54,17 +54,21 @@ Task Number | Task Title | COMPLETED
 ![GitHub Logo](./Visuals/Averaged_SOM/FINISHEDandCSandCORNER.png)
 ![GitHub Logo](./Visuals/Averaged_SOM/FINISHEDandCSandCENTER.png)
 
-![GitHub Logo](./Visuals/Extra/CHECKERBOARD-CANVAS (1).png)
-![GitHub Logo](./Visuals/Extra/CHECKERBOARD-CANVAS (2).png)
-![GitHub Logo](./Visuals/Extra/CHECKERBOARD-CANVAS (3).png)
+![GitHub Logo](./Visuals/Averaged_SOM/FINISHEDandPCCandRANDOM.png)
+![GitHub Logo](./Visuals/Averaged_SOM/FINISHEDandPCCandCORNER.png)
+![GitHub Logo](./Visuals/Averaged_SOM/FINISHEDandPCCandCENTER.png)
 
-![GitHub Logo](./Visuals/Extra/CHECKERBOARD-CANVAS (4).png)
-![GitHub Logo](./Visuals/Extra/CHECKERBOARD-CANVAS (5).png)
-![GitHub Logo](./Visuals/Extra/CHECKERBOARD-CANVAS (6).png)
+![GitHub Logo](./Visuals/Extra/CHECKERBOARD-CANVAS_1.png)
+![GitHub Logo](./Visuals/Extra/CHECKERBOARD-CANVAS_2.png)
+![GitHub Logo](./Visuals/Extra/CHECKERBOARD-CANVAS_3.png)
 
-![GitHub Logo](./Visuals/Extra/CHECKERBOARD-CANVAS (7).png)
-![GitHub Logo](./Visuals/Extra/CHECKERBOARD-CANVAS (8).png)
-![GitHub Logo](./Visuals/Extra/CHECKERBOARD-CANVAS (9).png)
+![GitHub Logo](./Visuals/Extra/CHECKERBOARD-CANVAS_4.png)
+![GitHub Logo](./Visuals/Extra/CHECKERBOARD-CANVAS_5.png)
+![GitHub Logo](./Visuals/Extra/CHECKERBOARD-CANVAS_6.png)
+
+![GitHub Logo](./Visuals/Extra/CHECKERBOARD-CANVAS_7.png)
+![GitHub Logo](./Visuals/Extra/CHECKERBOARD-CANVAS_8.png)
+![GitHub Logo](./Visuals/Extra/CHECKERBOARD-CANVAS_9.png)
 
 ## My Class Project Website
 [Artificial Intelligence Class Project Website](http://cs.oswego.edu/~kzeller/Portfolio/coursework/csc466/AI.html)
