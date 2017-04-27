@@ -9,7 +9,6 @@
 
 (ql:quickload "vecto")
 (in-package #:vecto)
-
 (load "task4.lsp")
 
 ;;create a function that calculates the scaling factor that the learning of a given weight vector decreases by

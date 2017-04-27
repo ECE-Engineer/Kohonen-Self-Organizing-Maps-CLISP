@@ -168,6 +168,11 @@
 ;;create a method that sets the screen colors
 (defun init-screen (init-choice)
 	*read-default-float-format*
+	
+	(dotimes (i 256)
+		(setf (aref black-white-palette i) (list i i i))
+	)
+	
 	(setf col-loop 0)
 	(dotimes (i (nth 0 (array-dimensions rbg-table)))
 		(dotimes (j (nth 1 (array-dimensions rbg-table)))

@@ -25,10 +25,8 @@
 
 (ql:quickload "vecto")
 (in-package #:vecto)
-
 (load "task2.lsp")
 (load "lp.lsp")
-
 (defconstant *FEATURE-AMOUNT* 5)
 
 ;;create a method to use the pearson correlation coefficient similarity metric
@@ -74,7 +72,7 @@
 					(cond
 						((and (= i 0) (= j 0))
 							(setf previous-value (pearson-correlation-coefficient sample-vector (aref arrayN i j)))
-							(setf large-list(snoc (aref arrayN i j) large-list))
+							(setf large-list (snoc (aref arrayN i j) large-list))
 							(setf counter (+ counter 1))
 						)
 						(t
@@ -97,7 +95,7 @@
 					(cond
 						((and (= i 0) (= j 0))
 							(setf previous-value (cosine-similarity sample-vector (aref arrayN i j)))
-							(setf large-list(snoc (aref arrayN i j) large-list))
+							(setf large-list (snoc (aref arrayN i j) large-list))
 							(setf counter (+ counter 1))
 						)
 						(t
@@ -120,7 +118,7 @@
 					(cond
 						((and (= i 0) (= j 0))
 							(setf previous-value (get-dist sample-vector (aref arrayN i j)))
-							(setf large-list(snoc (aref arrayN i j) large-list))
+							(setf large-list (snoc (aref arrayN i j) large-list))
 							(setf counter (+ counter 1))
 						)
 						(t

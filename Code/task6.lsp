@@ -10,15 +10,16 @@
 ;;;----------------------------------EXTRA THINGS TO TEST ARE THE SUB-FUNCTIONS--------------------------------------
 ;;;
 
+(load "task5.lsp")
 (ql:quickload "vecto")
 (in-package #:vecto)
-
-(load "task5.lsp")
-
 *read-default-float-format*
-
-
-
+(setf state 0)
+(setf map (list 0.0 0.0 0.0))
+(defconstant *MAX_ITERATIONS* 10000)
+(setf som-time 0.0)
+(setf time-inc (/ 1.0 *MAX_ITERATIONS*))
+(setf black-white-palette (make-array (list 256) :initial-element '(0 0 0)))
 
 
 ;;create a method to find the location of a vector in the vector-weights array
@@ -40,7 +41,7 @@
 )
 
 ;;create a method to scale the neighbors of the winning weight
-(defun scale-neighbors (winning-weight-vector sample-weight-vector time &aux radius2 outer-vect center-vect normalized-dist distance time-update temp1 temp2 temp3 position-vector)
+(defun scale-neighbors (winning-weight-vector sample-weight-vector time &aux radius2 outer-vect center-vect normalized-dist distance time-update temp1 temp2 temp3 position-vector component-vector)
 	*read-default-float-format*
 	(setf radius2 (coerce (round (/ (* *RADIUS* (- 1.0 time)) 2.0)) 'float))
 	(setf outer-vect (list (coerce radius2 'float) (coerce radius2 'float) 0.0))
@@ -74,6 +75,11 @@
 	)
 )
 
+;;create a method to round all the components of a vector
+(defun round-down-components (vect1)
+	(list (floor (nth 0 vect1)) (floor (nth 1 vect1)) (floor (nth 2 vect1)))
+)
+
 ;;create a method to scale a vector by a certain factor
 (defun add-components (vect1 vect2)
 	*read-default-float-format*
@@ -90,4 +96,10 @@
 (defun multiply (vect scalar)
 	*read-default-float-format*
 	(list (coerce (* (nth 0 vect) scalar) 'float) (coerce (* (nth 1 vect) scalar) 'float) (coerce (* (nth 2 vect) scalar) 'float))
+)
+
+;;create a method to divide a vector by a certain factor
+(defun divide (vect scalar)
+	*read-default-float-format*
+	(list (coerce (/ (nth 0 vect) scalar) 'float) (coerce (/ (nth 1 vect) scalar) 'float) (coerce (/ (nth 2 vect) scalar) 'float))
 )

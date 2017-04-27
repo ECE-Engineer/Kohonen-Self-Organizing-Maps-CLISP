@@ -1,186 +1,191 @@
-TASK 8 Demo Outline: "Color recognition through classification"
-(setf map '())	;create an empty list
-(create map 16) ;give the list 16-squared empty list elements
-nil
-(visualize map) ;displays the map-list as a grid
-- - - - - - - - - - - - - - - -
-- - - - - - - - - - - - - - - -
-- - - - - - - - - - - - - - - -
-- - - - - - - - - - - - - - - -
-- - - - - - - - - - - - - - - -
-- - - - - - - - - - - - - - - -
-- - - - - - - - - - - - - - - -
-- - - - - - - - - - - - - - - -
-- - - - - - - - - - - - - - - -
-- - - - - - - - - - - - - - - -
-- - - - - - - - - - - - - - - -
-- - - - - - - - - - - - - - - -
-- - - - - - - - - - - - - - - -
-- - - - - - - - - - - - - - - -
-- - - - - - - - - - - - - - - -
-- - - - - - - - - - - - - - - -
-(setf map (init map random)) ;assigns each list in the map-list to have three elements a red, green, and blue value RANDOMLY
-(visualize map) ;displays the map-list as a grid
-(5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125)
-(5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125)
-(5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125)
-(5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125)
-(5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125)
-(5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125)
-(5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125)
-(5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125)
-(5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125)
-(5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125)
-(5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125)
-(5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125)
-(5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125)
-(5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125)
-(5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125)
-(5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125)
-(setf map (init map four-corners)) ;assigns each list in the map-list to have three elements a red, green, and blue value to have red, green, blue, and black initialized at the four corners of the map and have them fade away radially.
-(visualize map) ;displays the map-list as a grid
-(5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125)
-(5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125)
-(5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125)
-(5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125)
-(5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125)
-(5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125)
-(5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125)
-(5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125)
-(5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125)
-(5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125)
-(5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125)
-(5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125)
-(5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125)
-(5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125)
-(5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125)
-(5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125)
-(setf map (init map equidistant-from-center)) ;assigns each list in the map-list to have three elements a red, green, and blue value to have red, green, and blue initialized equidistant from the center of the map and have them fade away radially.
-(visualize map) ;displays the map-list as a grid
-(5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125)
-(5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125)
-(5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125)
-(5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125)
-(5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125)
-(5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125)
-(5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125)
-(5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125)
-(5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125)
-(5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125)
-(5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125)
-(5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125)
-(5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125)
-(5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125)
-(5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125)
-(5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125)
-(setf sample (create-sample random)) ;create a random sample to help select a winning RGB weight vector
-(print sample)
-(32 245 0)
-(setf sample (create-sample custom (0 245 32))) ;create a custom sample to help select a winning RGB weight vector
-(print sample)
-(0 245 32)
-(setf winning-weight-vector (winner map sample))
-(print winning-weight-vector) ;prints the most similar RGB weight vector in the map to the one given
-(42 37 125)
-(setf samples (create-samples 5 random)) ;creates 5 random samples using the (create-sample) function, a specified amount of samples to generate, and a specifier to generate the sample RGB vectors at random
-(display samples) ;prints the most similar RGB weight vectors in the map to the ones given as a list
-((42 37 125) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0))
-(setf samples (create-samples 5 custom ((42 37 125) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0)))) ;creates 5 custom samples by a prompt for manual input, a specified amount of samples to generate, a specifier to generate the sample RGB vectors customly, and a list of lists containing the 3 elements consisting of R G B values
-(display samples) ;prints the most similar RGB weight vectors in the map to the ones given as a list
-((42 37 125) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0))
-(setf sample (create-sample random)) ;create a random sample to help select a winning RGB weight vector
-(print sample)
-(32 245 0)
-(setf sample (create-sample custom (0 245 32))) ;create a custom sample to help select a winning RGB weight vector
-(print sample)
-(0 245 32)
-(setf winning-weight-vector (winner map sample euclidean-distance))
-(print winning-weight-vector) ;prints the most similar RGB weight vector in the map to the one given
-(42 37 125)
-(setf samples (create-samples 5 random)) ;creates 5 random samples using the (create-sample) function, a specified amount of samples to generate, and a specifier to generate the sample RGB vectors at random
-(setf winning-weight-vectors (winners map samples euclidean-distance)) ;sets the most similar RGB weight vectors in the map to the ones given as a list
-(print winning-weight-vectors)
-((42 37 125) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0))
-(setf samples (create-samples 5 custom ((42 37 125) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0)))) ;creates 5 custom samples by a prompt for manual input, a specified amount of samples to generate, a specifier to generate the sample RGB vectors customly, and a list of lists containing the 3 elements consisting of R G B values
-(setf winning-weight-vectors (winners map samples euclidean-distance)) ;sets the most similar RGB weight vectors in the map to the ones given as a list
-(print winning-weight-vectors)
-((42 37 125) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0))
-(setf winning-weight-vector (winner map sample pearson-correlation-coefficient))
-(print winning-weight-vector) ;prints the most similar RGB weight vector in the map to the one given
-(42 37 125)
-(setf samples (create-samples 5 random)) ;creates 5 random samples using the (create-sample) function, a specified amount of samples to generate, and a specifier to generate the sample RGB vectors at random
-(setf winning-weight-vectors (winners map samples pearson-correlation-coefficient)) ;sets the most similar RGB weight vectors in the map to the ones given as a list
-(print winning-weight-vectors)
-((42 37 125) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0))
-(setf samples (create-samples 5 custom ((42 37 125) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0)))) ;creates 5 custom samples by a prompt for manual input, a specified amount of samples to generate, a specifier to generate the sample RGB vectors customly, and a list of lists containing the 3 elements consisting of R G B values
-(setf winning-weight-vectors (winners map samples pearson-correlation-coefficient)) ;sets the most similar RGB weight vectors in the map to the ones given as a list
-(print winning-weight-vectors)
-((42 37 125) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0))
-(setf neighbors (find-neighbors map winning-weight-vector hexagons)) ;creates a list of lists consisting of the RGB vectors
-(print neighbors)
-(5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125)
-(setf neighbors (find-neighbors map winning-weight-vector concentric-squares)) ;creates a list of lists consisting of the RGB vectors
-(print neighbors)
-(5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125)
-(setf neighbors (find-neighbors map winning-weight-vector gaussian)) ;creates a list of lists consisting of the RGB vectors
-(print neighbors)
-(5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125)
-(setf map (scale-winner winning-weight-vector sample map)) ;remake the map with the winning-weight-vector scaled to be more like the sample
-(visualize map) ;displays the map-list as a grid
-(5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125) (5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125)
-(5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125) (5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125)
-(5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125) (5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125)
-(5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125) (5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125)
-(5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125) (5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125)
-(5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125) (5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125)
-(5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125) (5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125)
-(5 3 8) (5 6 7) (3 0 5) (7 6 0) (0 222 0) (34 32 87) (154 0 0) (42 37 125) (5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125)
-(5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125) (5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125)
-(5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125) (5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125)
-(5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125) (5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125)
-(5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125) (5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125)
-(5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125) (5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125)
-(5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125) (5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125)
-(5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125) (5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125)
-(5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125) (5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125)
-(setf map (scale-neighbors neighbors sample map)) ;remake the map with the winning-weight-vector scaled to be more like the sample
-(visualize map) ;displays the map-list as a grid
-(5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125) (5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125)
-(5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125) (5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125)
-(5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125) (5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125)
-(5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125) (5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125)
-(5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125) (5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125)
-(5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125) (5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125)
-(5 3 8) (5 6 7) (3 0 5) (3 90 1) (10 200 3) (20 70 42) (154 0 0) (42 37 125) (5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125)
-(5 3 8) (5 6 7) (3 0 5) (0 90 0) (0 222 0) (14 155 30) (154 0 0) (42 37 125) (5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125)
-(5 3 8) (5 6 7) (3 0 5) (3 90 1) (10 200 3) (20 70 42) (154 0 0) (42 37 125) (5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125)
-(5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125) (5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125)
-(5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125) (5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125)
-(5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125) (5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125)
-(5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125) (5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125)
-(5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125) (5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125)
-(5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125) (5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125)
-(5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125) (5 3 8) (5 6 7) (3 0 5) (7 6 0) (24 98 12) (34 32 87) (154 0 0) (42 37 125)
-(setf graded-map (symbolic-grade-visualization map))
-(visualize graded-map) ;displays the map-list as a grid
-200 188 165 180 132 111 100 123 200 188 165 180 132 111 100 123
-200 188 165 180 132 111 100 123 200 188 165 180 132 111 100 123
-200 188 165 180 132 111 100 123 200 188 165 180 132 111 100 123
-200 188 165 180 132 111 100 123 200 188 165 180 132 111 100 123
-200 188 165 180 132 111 100 123 200 188 165 180 132 111 100 123
-200 188 165 235 240 235 100 123 200 188 165 180 132 111 100 123
-200 188 165 240 255 240 100 123 200 188 165 180 132 111 100 123
-200 188 165 180 240 235 100 123 200 188 165 180 132 111 100 123
-200 188 165 235 132 111 100 123 200 188 165 180 132 111 100 123
-200 188 165 180 132 111 100 123 200 188 165 180 132 111 100 123
-200 188 165 180 132 111 100 123 200 188 165 180 132 111 100 123
-200 188 165 180 132 111 100 123 200 188 165 180 132 111 100 123
-200 188 165 180 132 111 100 123 200 188 165 180 132 111 100 123
-200 188 165 180 132 111 100 123 200 188 165 180 132 111 100 123
-200 188 165 180 132 111 100 123 200 188 165 180 132 111 100 123
-200 188 165 180 132 111 100 123 200 188 165 180 132 111 100 123
-(what-color-is (0 222 0)) ;ask the system what label it has for all the similar data to the weight vector given if it has one
-"I'm sorry, I'm afraid I don't know that yet. Would you please tell me what color this is?"
-"BLUE"
-(what-color-is (10 200 3)) ;ask the system what label it has for all the similar data to the weight vector given if it has one
-"I found this to be blue."
+  i i i i i i i       ooooo    o        ooooooo   ooooo   ooooo
+  I I I I I I I      8     8   8           8     8     o  8    8
+  I  \ `+' /  I      8         8           8     8        8    8
+   \  `-+-'  /       8         8           8      ooooo   8oooo
+    `-__|__-'        8         8           8           8  8
+        |            8     o   8           8     o     8  8
+  ------+------       ooooo    8oooooo  ooo8ooo   ooooo   8
+
+Welcome to GNU CLISP 2.49 (2010-07-07) <http://clisp.cons.org/>
+
+Copyright (c) Bruno Haible, Michael Stoll 1992, 1993
+Copyright (c) Bruno Haible, Marcus Daniels 1994-1997
+Copyright (c) Bruno Haible, Pierpaolo Bernardi, Sam Steingold 1998
+Copyright (c) Bruno Haible, Sam Steingold 1999-2000
+Copyright (c) Sam Steingold, Bruno Haible 2001-2010
+
+Type :h and hit Enter for context help.
+
+;; Loading file C:\Users\Kyle\.clisprc.lisp ...
+;;  Loading file C:\Users\Kyle\quicklisp\setup.lisp ...
+;;   Loading file C:\Users\Kyle\quicklisp\ASDF.lisp ...
+;;   Loaded file C:\Users\Kyle\quicklisp\ASDF.lisp
+;;  Loaded file C:\Users\Kyle\quicklisp\setup.lisp
+;; Loaded file C:\Users\Kyle\.clisprc.lisp
+[1]> (load "task7.lsp")
+;; Loading file task7.lsp ...
+To load "vecto":
+  Load 1 ASDF system:
+    vecto
+; Loading "vecto"
+
+;;  Loading file task6.lsp ...
+To load "vecto":
+  Load 1 ASDF system:
+    vecto
+; Loading "vecto"
+
+;;   Loading file task5.lsp ...
+To load "vecto":
+  Load 1 ASDF system:
+    vecto
+; Loading "vecto"
+
+;;    Loading file task4.lsp ...
+To load "vecto":
+  Load 1 ASDF system:
+    vecto
+; Loading "vecto"
+
+;;     Loading file task3.lsp ...
+To load "vecto":
+  Load 1 ASDF system:
+    vecto
+; Loading "vecto"
+
+;;      Loading file task2.lsp ...
+To load "vecto":
+  Load 1 ASDF system:
+    vecto
+; Loading "vecto"
+
+;;       Loading file task1.lsp ...
+To load "vecto":
+  Load 1 ASDF system:
+    vecto
+; Loading "vecto"
+
+;;       Loaded file task1.lsp
+;;      Loaded file task2.lsp
+;;      Loading file lp.lsp ...
+;;      Loaded file lp.lsp
+;;     Loaded file task3.lsp
+;;    Loaded file task4.lsp
+;;   Loaded file task5.lsp
+;;  Loaded file task6.lsp
+;;  Loading file task9.lsp ...
+To load "vecto":
+  Load 1 ASDF system:
+    vecto
+; Loading "vecto"
+
+;;  Loaded file task9.lsp
+;; Loaded file task7.lsp
+T
+[2]> (in-package #:vecto)
+#<PACKAGE VECTO>
+VECTO[3]> "exiting!!!"
+#P"C:\\Visuals\\SOM_Frames\\FINISHEDandEDandRANDOM.png"
+VECTO[4]> (whatis '(255 0 0))
+
+"This Cluster Currently Has No Label. Please Give It A Label: " red
+
+RED
+VECTO[5]> (whatis '(0 255 0))
+
+"This Cluster Currently Has No Label. Please Give It A Label: " green
+
+GREEN
+VECTO[6]> (whatis '(0 0 255))
+
+"This Cluster Currently Has No Label. Please Give It A Label: " blue
+
+BLUE
+VECTO[7]> (whatis '(255 0 255))
+
+"This Cluster Currently Has No Label. Please Give It A Label: " pink
+
+PINK
+VECTO[8]> (whatis '(255 255 0))
+
+"This Cluster Currently Has No Label. Please Give It A Label: " yellow
+
+YELLOW
+VECTO[9]> (whatis '(255 128 0))
+YELLOW
+VECTO[10]> (whatis '(128 0 255))
+
+"This Cluster Currently Has No Label. Please Give It A Label: " purple
+
+PURPLE
+VECTO[11]> (whatis '(255 0 128))
+RED
+VECTO[12]> (whatis '(0 255 255))
+
+"This Cluster Currently Has No Label. Please Give It A Label: " light_blue
+
+LIGHT_BLUE
+VECTO[13]> (whatis '(0 64 255))
+
+"This Cluster Currently Has No Label. Please Give It A Label: " bright_blue
+
+BRIGHT_BLUE
+VECTO[14]> (whatis '(0 128 255))
+
+"This Cluster Currently Has No Label. Please Give It A Label: " pale_blue
+
+PALE_BLUE
+VECTO[15]> (whatis '(0 0 0))
+
+"This Cluster Currently Has No Label. Please Give It A Label: " black
+
+BLACK
+VECTO[16]> (whatis '(255 255 255))
+
+"This Cluster Currently Has No Label. Please Give It A Label: " white
+
+WHITE
+VECTO[17]> (whatis '(128 128 128))
+
+"This Cluster Currently Has No Label. Please Give It A Label: " gray
+
+GRAY
+VECTO[18]> (whatis '(153 0 0))
+
+"This Cluster Currently Has No Label. Please Give It A Label: " red
+
+RED
+VECTO[19]> (whatis '(200 0 0))
+RED
+VECTO[20]> (whatis '(100 0 0))
+
+"This Cluster Currently Has No Label. Please Give It A Label: " red
+
+RED
+VECTO[21]> (whatis '(10 0 0))
+BLACK
+VECTO[22]> (whatis '(10 5 15))
+BLACK
+VECTO[23]> (whatis '(0 200 0))
+
+"This Cluster Currently Has No Label. Please Give It A Label: " green
+
+GREEN
+VECTO[24]> (whatis '(0 150 0))
+GREEN
+VECTO[25]> (whatis '(0 85 0))
+GREEN
+VECTO[26]> (whatis '(0 150 0))
+GREEN
+VECTO[27]> (whatis '(93 85 127))
+
+"This Cluster Currently Has No Label. Please Give It A Label: " gray
+
+GRAY
+VECTO[28]> (whatis '(211 202 255))
+
+"This Cluster Currently Has No Label. Please Give It A Label: " black
+
+BLACK
+VECTO[29]>
+Bye.

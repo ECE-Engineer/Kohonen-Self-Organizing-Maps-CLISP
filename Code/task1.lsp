@@ -10,6 +10,7 @@
 
 (ql:quickload "vecto")
 (in-package #:vecto)
+(load "lp.lsp")
 
 ;;create a method to make an empty n by n array
 (defun init-empty-array (num)
